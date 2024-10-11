@@ -27,9 +27,13 @@
               }
             ],
             "styles": [
+              "/node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "/node_modules/bootstrap/package.json",
+              "/node_modules/javascript/package.json"
+            ]
           },
           "configurations": {
             "production": {
