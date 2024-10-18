@@ -7,8 +7,12 @@ import { FooterComponent } from './footer/footer.component';
 import { ContentComponent } from './content/content.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { LayoutComponent } from './layout/layout.component';
-import { AppRoutingModule } from './app-routing.module';
 import { BodyComponent } from './body/body.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+    { path: 'component', component: ContentComponent }
+];
 
 @NgModule({
     declarations: [
@@ -23,7 +27,7 @@ import { BodyComponent } from './body/body.component';
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        RouterModule.forRoot(routes)
     ],
     providers: [],
     bootstrap: [AppComponent]

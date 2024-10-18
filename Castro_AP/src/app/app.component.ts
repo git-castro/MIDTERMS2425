@@ -4,6 +4,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContentComponent } from './content/content.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,15 +13,17 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     RouterOutlet, 
     NavbarComponent,
-  
     HeaderComponent,
     BodyComponent,
+    ContentComponent,
     FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Mark Froilan G. Castro';
-  course = "BS Computer Science";
+  constructor(private router: Router) {}
+    navigateToComponent() {
+      this.router.navigate(['/content']);
+    }
 }
