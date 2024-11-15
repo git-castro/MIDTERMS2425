@@ -7,7 +7,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 
 export const routes: Routes = [
     {
-        path: '#', 
+        path: '', 
         component: HomeComponent
     },
     {
