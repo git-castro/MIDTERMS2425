@@ -1,25 +1,25 @@
 <div class="p-5 mb-4 bg-body-tertiary rounded-3">
     <h1 class="display-2 text-center mt-3">Contact Us</h1>
     <p class="col-md-8 fs-4 mx-auto text-center">We’d love to hear from you! Whether you have a question, need a quote, or want to book our services, we’re here to help. Get in touch with us today!</p>
-    <form>
+    <form #myForm="ngForm" >
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model.name" required>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" [(ngModel)]="model.email" required>
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Phone (Optional)</label>
-            <input type="text" class="form-control" id="exampleInputEmail1">
+            <label class="form-label">Phone (Optional)</label>
+            <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="model.phone">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Message</label>
-            <input type="textarea" class="form-control" id="exampleInputEmail1" style="height: 100px; justify-content: baseline;">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" style="vertical-align: top;" [(ngModel)]="model.message" required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary" style="background-color: #b4dd1e;">Submit</button>
+        <button type="submit" class="btn" style="color: white; background-color: #b4dd1e;" [disabled]="!myForm.valid" (click)="openModal()">Submit</button>
     </form>
     <div class="row m-5">
         <div class="col-sm-6">
@@ -29,7 +29,7 @@
                     <ul class="card-text">
                         <li>Email: info(at)brat.com</li>
                         <li>Phone: 0999-777-777</li>
-                        <li>Address: Planet Earth</li>
+                        <li>Address: Earth</li>
                     </ul>
                 </div>
             </div>
@@ -43,7 +43,28 @@
                         <li>Twitter: EcoClean Services</li>
                         <li>Instagram: (at)ecoclean_earth</li>
                     </ul>
+                </div>
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="exampleModal" #modal>
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content" style="overflow-x: hidden;">
+      <div class="modal-header" style="background-color: #b4dd1e;">
+        <h5 class="modal-title">Form Submitted:</h5>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body" style="max-height: 60vh; overflow-y: auto; word-wrap: break-word; word-break: break-word;">
+        <p>Name: <b>{{ model.name }}</b></p>
+        <p>Email: <b>{{ model.email }}</b></p>
+        <p>Phone (Optional): <b>{{ model.phone }}</b></p>
+        <p>Message: <b>{{ model.message }}</b></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" style="color: white; background-color: #b4dd1e;" (click)="closeModal()">Confirm</button>
+      </div>
+    </div>
+  </div>
 </div>
