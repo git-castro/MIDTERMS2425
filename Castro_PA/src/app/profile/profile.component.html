@@ -1,0 +1,82 @@
+<div class="container mt-4">
+  <h2 class="text-center">Profile Form</h2>
+  <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)">
+    <!-- Name Fields -->
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" class="form-control" ngModel required/>
+    </div>
+    <div class="form-group">
+      <label for="middleInitial">Middle Initial</label>
+      <input type="text" id="middleInitial" name="middleInitial" class="form-control" ngModel maxlength="1"/>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" class="form-control"  ngModel required/>
+    </div>
+
+    <!-- Mailing Address -->
+    <div class="form-group">
+      <label for="houseNumber">House Number</label>
+      <input type="text" id="houseNumber" name="houseNumber" class="form-control" ngModel required/>
+    </div>
+    <div class="form-group">
+      <label for="street">Street</label>
+      <input type="text" id="street" name="street" class="form-control" ngModel required/>
+    </div>
+    <div class="form-group">
+      <label for="barangay">Barangay</label>
+      <input type="text" id="barangay" name="barangay" class="form-control" ngModel required/>
+    </div>
+    <div class="form-group">
+      <label for="city">City</label>
+      <input type="text" id="city" name="city" class="form-control" ngModel required/>
+    </div>
+    <div class="form-group">
+      <label for="province">Province/Municipality</label>
+      <input type="text" id="province" name="province" class="form-control" ngModel required/>
+    </div>
+
+    <!-- Profile Image -->
+    <div class="form-group">
+      <label for="profileImage">Profile Image</label>
+      <input type="file" id="profileImage" name="profileImage" class="form-control" (change)="onFileSelected($event)"/>
+    </div>
+
+    <!-- Email (Prefilled) -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" class="form-control" style="color: gray" ngModel [ngModel]="prefilledEmail" readonly/>
+    </div>
+
+    <!-- Mobile Number -->
+    <div class="form-group">
+      <label for="mobileNumber">Mobile Number</label>
+      <input type="tel" id="mobileNumber" name="mobileNumber" class="form-control" ngModel required/>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-3" [disabled]="!profileForm.valid" (click)="openModal()">
+      Save
+    </button>
+  </form>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="exampleModal" #modal>
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content" style="overflow-x: hidden;">
+        <div class="modal-header">
+            <h5 class="modal-title">Form Submitted:</h5>
+            <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+        </div>
+        <div class="modal-body" style="max-height: 60vh; overflow-y: auto; word-wrap: break-word; word-break: break-word;">
+            <p>Name: <b>{{ formData.firstName }} {{ formData.middleInitial }} {{ formData.lastName }}</b></p>
+            <p>Email: <b>{{ formData.email }}</b></p>
+            <p>Mobile Number: <b>{{ formData.mobileNumber }}</b></p>
+            <p>Uploaded Image:</p>
+            <img *ngIf="uploadedImageUrl" [src]="uploadedImageUrl" alt="Uploaded Profile" class="img-fluid" style="max-height: 200px;"/>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeModal()">Confirm</button>
+        </div>
+    </div>
+</div>

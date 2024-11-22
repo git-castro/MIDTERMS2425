@@ -1,7 +1,7 @@
 <div class="p-5 mb-4 bg-body-tertiary rounded-3">
     <h1 class="display-2 text-center mt-3">Contact Us</h1>
     <p class="col-md-8 fs-4 mx-auto text-center">We’d love to hear from you! Whether you have a question, need a quote, or want to book our services, we’re here to help. Get in touch with us today!</p>
-    <form #myForm="ngForm" >
+    <form #myForm="ngForm">
         <div class="mb-3">
             <label class="form-label">Name</label>
             <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model.name" required>
@@ -52,7 +52,7 @@
 <div class="modal fade" tabindex="-1" role="dialog" id="exampleModal" #modal>
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content" style="overflow-x: hidden;">
-      <div class="modal-header" style="background-color: #b4dd1e;">
+      <div class="modal-header">
         <h5 class="modal-title">Form Submitted:</h5>
         <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
       </div>
@@ -63,7 +63,7 @@
         <p>Message: <b>{{ model.message }}</b></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" style="color: white; background-color: #b4dd1e;" (click)="closeModal()">Confirm</button>
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Confirm</button>
       </div>
     </div>
   </div>
