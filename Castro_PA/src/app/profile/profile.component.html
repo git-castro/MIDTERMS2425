@@ -4,37 +4,37 @@
     <!-- Name Fields -->
     <div class="form-group">
       <label for="firstName">First Name</label>
-      <input type="text" id="firstName" name="firstName" class="form-control" ngModel required/>
+      <input type="text" id="firstName" name="firstName" class="form-control" [(ngModel)]="formData.firstName" required/>
     </div>
     <div class="form-group">
       <label for="middleInitial">Middle Initial</label>
-      <input type="text" id="middleInitial" name="middleInitial" class="form-control" ngModel maxlength="1"/>
+      <input type="text" id="middleInitial" name="middleInitial" class="form-control" [(ngModel)]="formData.middleInitial"  maxlength="1"/>
     </div>
     <div class="form-group">
       <label for="lastName">Last Name</label>
-      <input type="text" id="lastName" name="lastName" class="form-control"  ngModel required/>
+      <input type="text" id="lastName" name="lastName" class="form-control" [(ngModel)]="formData.lastName"  required/>
     </div>
 
     <!-- Mailing Address -->
     <div class="form-group">
       <label for="houseNumber">House Number</label>
-      <input type="text" id="houseNumber" name="houseNumber" class="form-control" ngModel required/>
+      <input type="text" id="houseNumber" name="houseNumber" class="form-control" [(ngModel)]="formData.houseNumber" required/>
     </div>
     <div class="form-group">
       <label for="street">Street</label>
-      <input type="text" id="street" name="street" class="form-control" ngModel required/>
+      <input type="text" id="street" name="street" class="form-control" [(ngModel)]="formData.street" required/>
     </div>
     <div class="form-group">
       <label for="barangay">Barangay</label>
-      <input type="text" id="barangay" name="barangay" class="form-control" ngModel required/>
+      <input type="text" id="barangay" name="barangay" class="form-control" [(ngModel)]="formData.barangay" required/>
     </div>
     <div class="form-group">
       <label for="city">City</label>
-      <input type="text" id="city" name="city" class="form-control" ngModel required/>
+      <input type="text" id="city" name="city" class="form-control" [(ngModel)]="formData.city" required/>
     </div>
     <div class="form-group">
       <label for="province">Province/Municipality</label>
-      <input type="text" id="province" name="province" class="form-control" ngModel required/>
+      <input type="text" id="province" name="province" class="form-control" [(ngModel)]="formData.province" required/>
     </div>
 
     <!-- Profile Image -->
@@ -46,13 +46,13 @@
     <!-- Email (Prefilled) -->
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" class="form-control" style="color: gray" ngModel [ngModel]="prefilledEmail" readonly/>
+      <input type="email" id="email" name="email" class="form-control" style="color: gray" [(ngModel)]="prefilledEmail" readonly/>
     </div>
 
     <!-- Mobile Number -->
     <div class="form-group">
       <label for="mobileNumber">Mobile Number</label>
-      <input type="tel" id="mobileNumber" name="mobileNumber" class="form-control" ngModel required/>
+      <input type="tel" id="mobileNumber" name="mobileNumber" class="form-control" [(ngModel)]="formData.mobileNumber" required/>
     </div>
 
     <button type="submit" class="btn btn-primary mt-3" [disabled]="!profileForm.valid" (click)="openModal()">
@@ -70,10 +70,9 @@
         </div>
         <div class="modal-body" style="max-height: 60vh; overflow-y: auto; word-wrap: break-word; word-break: break-word;">
             <p>Name: <b>{{ formData.firstName }} {{ formData.middleInitial }} {{ formData.lastName }}</b></p>
-            <p>Email: <b>{{ formData.email }}</b></p>
+            <p>Address: <b>{{ formData.houseNumber }} {{ formData.street }} {{ formData.barangay }} {{ formData.city }} {{ formData.province }}</b></p>
             <p>Mobile Number: <b>{{ formData.mobileNumber }}</b></p>
-            <p>Uploaded Image:</p>
-            <img *ngIf="uploadedImageUrl" [src]="uploadedImageUrl" alt="Uploaded Profile" class="img-fluid" style="max-height: 200px;"/>
+            <p>Uploaded Image:</p><img *ngIf="uploadedImageUrl" [src]="uploadedImageUrl" alt="Profile Picture" class="img-fluid" style="max-height: 200px;"/>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" (click)="closeModal()">Confirm</button>

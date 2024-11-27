@@ -1,23 +1,16 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedService } from '../shared.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent {
-  formData: any = {
-    firstName: '',
-    middleInitial: '',
-    lastName: '',
-    email: 'user@example.com', // Prefilled email
-    mobileNumber: ''
-  };
-
   uploadedImageUrl: string | null = null;
 
   prefilledEmail: string = '';
@@ -27,6 +20,19 @@ export class ProfileComponent {
   ngOnInit(): void {
     this.prefilledEmail = this.sharedService.getEmail();
   }
+
+  formData: any = {
+    firstName: '',
+    middleInitial: '',
+    lastName: '',
+    houseNumber: '',
+    street: '',
+    barangay: '',
+    city: '',
+    province: '',
+    email: this.prefilledEmail,
+    mobileNumber: ''
+  };
 
   onSubmit(form: any) {
     if (form.valid) {
