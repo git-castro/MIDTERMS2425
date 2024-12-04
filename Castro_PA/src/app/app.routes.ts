@@ -49,6 +49,11 @@ export const routes: Routes = [
         title: 'Login'
     },
     {
+        path: 'register/profile',
+        component: ProfileComponent,
+        title: 'Profile'
+    },
+    {
         path: 'profile',
         component: ProfileComponent,
         title: 'Profile'

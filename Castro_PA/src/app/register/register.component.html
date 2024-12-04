@@ -1,47 +1,88 @@
-<div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
-  <div class="row w-100 justify-content-center">
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header">
-          <h3>Register</h3>
-        </div>
-        <div class="card-body">
-          <form (ngSubmit)="onSubmit()" [formGroup]="registrationForm">
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" id="email" class="form-control" formControlName="email" [(ngModel)]="email" required/>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password <i style="color: grey;">(min: 6 characters.)</i></label>
-              <input type="password" id="password" class="form-control" formControlName="password" required/>
-            </div>
-            <div class="mb-3">
-              <label for="confirmPassword" class="form-label">Confirm Password</label>
-              <input type="password" id="confirmPassword" class="form-control" formControlName="confirmPassword" required/>
-            </div>
-            <button type="submit" class="btn btn-primary" [disabled]="!registrationForm.valid" (click)="openModal()">
-              Register
-            </button>
-          </form>
-        </div>
-      </div>
+<div class="container py-5">
+  <h4 class="mb-4 text-white text-center">Register</h4>
+  <form (ngSubmit)="onSubmit()" [formGroup]="registrationForm">
+    <div class="mb-3">
+      <label for="email" class="form-label text-white">Email</label>
+      <input 
+        type="email" 
+        id="email" 
+        class="form-control bg-secondary text-white border-0" 
+        formControlName="email" 
+        [(ngModel)]="email" 
+        placeholder="Enter your email" 
+        required />
     </div>
-  </div>
+    <div class="mb-3">
+      <label for="password" class="form-label text-white">
+        Password <i style="color: grey;">(min: 6 characters)</i>
+      </label>
+      <input 
+        type="password" 
+        id="password" 
+        class="form-control bg-secondary text-white border-0" 
+        formControlName="password" 
+        placeholder="Enter your password" 
+        required />
+    </div>
+    <div class="mb-3">
+      <label for="confirmPassword" class="form-label text-white">Confirm Password</label>
+      <input 
+        type="password" 
+        id="confirmPassword" 
+        class="form-control bg-secondary text-white border-0" 
+        formControlName="confirmPassword" 
+        placeholder="Re-enter your password" 
+        required />
+    </div>
+    <div class="d-flex justify-content-between">
+      <button 
+        type="submit" 
+        class="btn btn-primary" 
+        [disabled]="!registrationForm.valid" 
+        (click)="openModal()">
+        Register
+      </button>
+      <button type="reset" class="btn btn-secondary">Clear</button>
+    </div>
+  </form>
 </div>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="exampleModal" #modal>
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content" style="overflow-x: hidden;">
-      <div class="modal-header">
-        <h5 class="modal-title">Form Submitted:</h5>
-        <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+<div 
+  class="modal fade" 
+  tabindex="-1" 
+  role="dialog" 
+  id="exampleModal" 
+  #modal>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-secondary text-white">
+      <div class="modal-header bg-dark border-0">
+        <h5 class="modal-title text-white">Form Submitted</h5>
+        <button 
+          type="button" 
+          class="btn-close btn-close-white" 
+          aria-label="Close" 
+          (click)="closeModal()">
+        </button>
       </div>
-      <div class="modal-body" style="max-height: 60vh; overflow-y: auto; word-wrap: break-word; word-break: break-word;">
+      <div 
+        class="modal-body" 
+        style="max-height: 60vh; overflow-y: auto; word-wrap: break-word; word-break: break-word;">
         <p>You have successfully created an account, proceed to your profile?</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancel</button>
-        <button type="button" class="btn btn-secondary" routerLink="profile" (click)="closeModal()">Profile</button>
+      <div class="modal-footer bg-dark border-0">
+        <button 
+          type="button" 
+          class="btn btn-secondary" 
+          (click)="closeModal()">
+          Cancel
+        </button>
+        <button 
+          type="button" 
+          class="btn btn-primary" 
+          routerLink="profile" 
+          (click)="closeModal()">
+          Profile
+        </button>
       </div>
     </div>
   </div>
