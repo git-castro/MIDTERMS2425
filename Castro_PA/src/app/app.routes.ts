@@ -7,8 +7,22 @@ import { ProfileComponent } from './profile/profile.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ServicesComponent } from './services/services.component';
 import { ServiceDetailsComponent } from './service-details/service-details.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ServicesListComponent } from './services-list/services-list.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
+    {
+        path: '',
+        redirectTo: '',
+        pathMatch: 'full'
+    },
+    {
+        path: '',
+        component: NavbarComponent,
+        outlet: 'header'
+    },
     {
         path: '',
         component: HomeComponent,
@@ -30,6 +44,11 @@ export const routes: Routes = [
         title: 'Register'
     },
     {
+        path: 'login',
+        component: LoginComponent,
+        title: 'Login'
+    },
+    {
         path: 'profile',
         component: ProfileComponent,
         title: 'Profile'
@@ -37,14 +56,22 @@ export const routes: Routes = [
     {
         path: 'services',
         component: ServicesComponent,
-        title: 'Services',
+        title: 'Services'
+    },
+    {
+        path: '',
+        component: ServiceDetailsComponent,
+        outlet: 'right'
+    },
+    {
+        path: '',
+        component: ServicesListComponent,
         outlet: 'left'
     },
     {
-        path: 'service-details',
-        component: ServiceDetailsComponent,
-        title: 'Service Details',
-        outlet: 'right'
+        path: '',
+        component: FooterComponent,
+        outlet: 'footer'
     },
     {
         path: '**',

@@ -1,44 +1,89 @@
-<div class="p-5 mb-4 bg-body-tertiary rounded-3 d-flex align-items-center justify-content-center vh-100">
-  <table class="table table-striped table-bordered">
-    <thead>
-      <tr>
-        <th scope="col">Service ID</th>
-        <th scope="col">Service Name</th>
-        <th scope="col">Service Category</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">001</th>
-        <td>Oil Change</td>
-        <td>Maintenance</td>
-        <td>
-          <button class="btn btn-info btn-sm" (click)="navigate()">View</button>
-          <button class="btn btn-primary btn-sm">Edit</button>
-          <button class="btn btn-danger btn-sm">Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">002</th>
-        <td>Tire Replacement</td>
-        <td>Repair</td>
-        <td>
-          <button class="btn btn-info btn-sm">View</button>
-          <button class="btn btn-primary btn-sm">Edit</button>
-          <button class="btn btn-danger btn-sm">Delete</button>
-        </td>
-      </tr>
-      <tr>
-        <th scope="row">003</th>
-        <td>Battery Inspection</td>
-        <td>Inspection</td>
-        <td>
-          <button class="btn btn-info btn-sm">View</button>
-          <button class="btn btn-primary btn-sm">Edit</button>
-          <button class="btn btn-danger btn-sm">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container py-5">
+  <div class="">
+    <h2 class="mb-4 text-white text-center">Service Management</h2>
+    <table class="table table-hover text-white">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">Service ID</th>
+          <th scope="col">Service Name</th>
+          <th scope="col">Service Category</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bg-secondary">
+          <th scope="row">001</th>
+          <td>Oil Change</td>
+          <td>Maintenance</td>
+          <td>
+            <button class="btn btn-primary btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+        <tr class="bg-secondary">
+          <th scope="row">002</th>
+          <td>Tire Replacement</td>
+          <td>Repair</td>
+          <td>
+            <button class="btn btn-primary btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+        <tr class="bg-secondary">
+          <th scope="row">003</th>
+          <td>Battery Inspection</td>
+          <td>Inspection</td>
+          <td>
+            <button class="btn btn-primary btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+        <tr class="bg-secondary">
+          <th scope="row">004</th>
+          <td>Brake Check</td>
+          <td>Inspection</td>
+          <td>
+            <button class="btn btn-primary btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+        <tr class="bg-secondary">
+          <th scope="row">005</th>
+          <td>Wheel Alignment</td>
+          <td>Maintenance</td>
+          <td>
+            <button class="btn btn-primary btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+        <tr class="bg-secondary">
+          <th scope="row">006</th>
+          <td>Engine Diagnostics</td>
+          <td>Repair</td>
+          <td>
+            <button class="btn btn-primary btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+        <tr class="bg-secondary">
+          <th scope="row">007</th>
+          <td>Air Conditioning Service</td>
+          <td>Maintenance</td>
+          <td>
+            <button class="btn btn-primary btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+        <tr class="bg-secondary">
+          <th scope="row">008</th>
+          <td>Transmission Repair</td>
+          <td>Repair</td>
+          <td>
+            <button class="btn btn-primary btn-sm">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

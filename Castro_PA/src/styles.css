@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #343a40; /* Dark background for the entire page */
+  color: white; /* White text for better visibility */
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+}
+
+.table .bg-secondary {
+  background-color: #6c757d !important; /* Custom grey color */
+}
+
+.carousel {
+  background-color: #343a40; /* Dark background for the carousel */
+}
+
+.carousel-inner img {
+  max-height: 500px; /* Set a maximum height for images */
+  object-fit: cover; /* Ensure images cover the area without distortion */
+}
