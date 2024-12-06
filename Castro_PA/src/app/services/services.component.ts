@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
+import { Services } from '../app.component';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './services.component.html',
   styleUrl: './services.component.css'
 })
+
 export class ServicesComponent {
+services: any;
   constructor(private router: Router) {}
 
   navigate() {

@@ -6,11 +6,22 @@
         <tr class="table-dark">
           <th scope="col">Service ID</th>
           <th scope="col">Service Name</th>
-          <th scope="col">Service Category</th>
+          <th scope="col">Description</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
+        <tr class="bg-secondary" *ngFor = "let service of services">
+          <th scope="row">{{service.id}}</th>
+          <td>{{service.name}}</td>
+          <td>{{service.description}}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="viewServiceDetails(service)">Edit</button>
+            <button class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+      <!-- <tbody>
         <tr class="bg-secondary">
           <th scope="row">001</th>
           <td>Oil Change</td>
@@ -83,7 +94,8 @@
             <button class="btn btn-danger btn-sm">Delete</button>
           </td>
         </tr>
-      </tbody>
+      </tbody> -->
     </table>
+    <div *ngIf="selectedService"></div>
   </div>
 </div>

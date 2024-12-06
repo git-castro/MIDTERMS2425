@@ -1,7 +1,7 @@
 <div class="container py-5">
   <h4 class="mb-4 text-white text-center">Profile Form</h4>
   <form #profileForm="ngForm" (ngSubmit)="onSubmit(profileForm)">
-    <!-- Name Fields -->
+    <h5 class="text-white mt-4">Full Name</h5>
     <div class="mb-3">
       <label for="firstName" class="form-label text-white">First Name</label>
       <input
@@ -36,7 +36,6 @@
       />
     </div>
 
-    <!-- Mailing Address -->
     <h5 class="text-white mt-4">Mailing Address</h5>
     <div class="mb-3">
       <label for="houseNumber" class="form-label text-white">House Number</label>
@@ -94,7 +93,7 @@
       />
     </div>
 
-    <!-- Profile Image -->
+    <h5 class="text-white mt-4">Identification</h5>
     <div class="mb-3">
       <label for="profileImage" class="form-label text-white">Profile Image</label>
       <input
@@ -105,8 +104,6 @@
         (change)="onFileSelected($event)"
       />
     </div>
-
-    <!-- Email -->
     <div class="mb-3">
       <label for="email" class="form-label text-white">Email</label>
       <input
@@ -118,8 +115,6 @@
         readonly
       />
     </div>
-
-    <!-- Mobile Number -->
     <div class="mb-3">
       <label for="mobileNumber" class="form-label text-white">Mobile Number</label>
       <input
